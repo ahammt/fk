@@ -68,7 +68,12 @@
     <ul class="nav nav-pills">
       <li class="active"><a href="#">我的饭卡</a></li>
       <li><a href="/report">挂失</a></li>
-      <li class="disabled"><a href="#">管理</a></li>
+        <c:if test="${user.power eq 1}">
+        <li><a href="/selectpage">管理</a></li>
+        </c:if>
+        <c:if test="${user.power ne 1}">
+            <li class="disabled"><a href="/selectpage">管理</a></li>
+        </c:if>
       <li><a href="delete">销号</a></li>
     </ul>
 
