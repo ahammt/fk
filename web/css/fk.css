@@ -1,0 +1,55 @@
+/*row间距*/
+.row-margin-top {
+    margin-top: 20px;
+}
+/*网页顶部栏*/
+.html-top{
+    height: 17px;
+    background-color: #8E8C84;
+    color: #fff;
+}
+/*标题栏*/
+#guide{
+    background-color: #f8f5f0;
+    color: black;
+}
+/*导航栏去圆角*/
+/*.navbar-fixed-top .navbar-inner {*/
+    /*-webkit-border-radius: 0;*/
+    /*-moz-border-radius: 0;*/
+    /*border-radius: 0;*/
+/*}*/
+
+#banner {
+    min-height: 300px;
+    border-bottom: none;
+}
+/*body顶部距离*/
+body{
+    padding-top: 60px;
+}
+/*div边框 用于定位*/
+div{
+    /*border: 1px solid black;*/
+}
+/*row对齐*/
+/*.row {*/
+    /*display: -webkit-box;*/
+    /*display: -webkit-flex;*/
+    /*display: -ms-flexbox;*/
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+/*}*/
+/*.row > [class*='col-'] {*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
+/*}*/
+.bigfont{
+    font-size: 17px;
+}
+#footer {
+    /*min-width: 100%;*/
+    /*margin-top: 20px!important;*/
+    /*position:absolute;bottom:0;width:100%;*/
+    position: fixed;bottom: 0;
+}
