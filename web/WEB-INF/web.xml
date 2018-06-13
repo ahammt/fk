@@ -105,4 +105,40 @@
         <servlet-name>ReportServlet</servlet-name>
         <url-pattern>/report</url-pattern>
     </servlet-mapping>
-        </web-app>
+
+    <servlet>
+        <servlet-name>selectpage</servlet-name>
+        <jsp-file>/select.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>selectpage</servlet-name>
+        <url-pattern>/selectpage</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>select</servlet-name>
+        <servlet-class>servlet.SelectServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>select</servlet-name>
+        <url-pattern>/select</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AdmRepServlet</servlet-name>
+        <servlet-class>servlet.AdmRepServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdmRepServlet</servlet-name>
+        <url-pattern>/admrep</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AdmDelServlet</servlet-name>
+        <servlet-class>servlet.AdmDelServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdmDelServlet</servlet-name>
+        <url-pattern>/admdel</url-pattern>
+    </servlet-mapping>
+
+</web-app>
