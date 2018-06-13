@@ -14,9 +14,7 @@ public class RecordDAO {
     public List<Record> getRecord(String userId){
         List<Record> records = new ArrayList<Record>();
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection c = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/fanka?characterEncoding=UTF-8",
-                    "root", "root");
+            Connection c = new ConDAO().c();
             String sql = "select * from record where userId = ? order by date";
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1, userId);
@@ -50,9 +48,7 @@ public class RecordDAO {
     }
     public void insertRecord(String userId, String date, String message, int pay){
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection c = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/fanka?characterEncoding=UTF-8",
-                    "root", "root");
+            Connection c = new ConDAO().c();
             String sql = "insert into record values(?,?,?,?) ";
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1,userId);

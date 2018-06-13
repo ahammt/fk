@@ -15,9 +15,7 @@ public class UserDAO {
     public User getUser(String userId,String password){ //通过传入的用户名和密码，从数据库中获取用户信息，存入User，并return
         User result = null;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection c = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/fanka?characterEncoding=UTF-8",
-                    "root", "root");
+            Connection c = new ConDAO().c();
             String sql = "select * from user where userId = ? and password = ?";
             PreparedStatement ps = c.prepareStatement(sql);
 
@@ -52,9 +50,7 @@ public class UserDAO {
     //更新数据方法，i为要修改的参数,v为参数的值，i可为password/
     public void updataUser(User user,String i,int v){
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection c = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/fanka?characterEncoding=UTF-8",
-                    "root", "root");
+            Connection c = new ConDAO().c();
 //            String sql = "updata user set "+i+"=? where userId = ?";
             String sql = "update user set "+i+" = ? where userId = ?";
 
@@ -74,9 +70,7 @@ public class UserDAO {
     }
     public void updataUser(User user,String i,String v){
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection c = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/fanka?characterEncoding=UTF-8",
-                    "root", "root");
+            Connection c = new ConDAO().c();
 //            String sql = "updata user set "+i+"=? where userId = ?";
             String sql = "update user set "+i+" = ? where userId = ?";
 
@@ -97,9 +91,7 @@ public class UserDAO {
     public boolean getUser(String userId){
         boolean f = false;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection c = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/fanka?characterEncoding=UTF-8",
-                    "root", "root");
+            Connection c = new ConDAO().c();
             String sql = "select * from user where userId = ?";
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1,userId);
@@ -121,9 +113,7 @@ public class UserDAO {
     }
     public void insertUser(String userId,String password){
         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection c = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/fanka?characterEncoding=UTF-8",
-                    "root", "root");
+            Connection c = new ConDAO().c();
             String sql = "insert into user value(?,?,?,?)";
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1,userId);
@@ -141,9 +131,8 @@ public class UserDAO {
     }
     public void delUser(String userId){
         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection c = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/fanka?characterEncoding=UTF-8",
-                    "root", "root");
+
+            Connection c = new ConDAO().c();
             String sql = "delete from user where userId = ?";
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1,userId);
